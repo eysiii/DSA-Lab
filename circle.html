@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area of a Circle</title>
+</head>
+<body>
+    <h1>Finding the Area of a Circle</h1>
+
+    <form method="post">
+        <label for="radius">Enter the radius:</label>
+        <input type="text" id="radius" name="radius" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if radius is not none and area is not none %}
+        <p>The area of a circle with radius {{ radius }} is: {{ area }}</p>
+    {% elif error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>

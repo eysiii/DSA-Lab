@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area of Triangle</title>
+</head>
+<body>
+    <h1>Finding the Area of a Triangle</h1>
+
+    <form method="post">
+        <label for="base">Enter the base:</label>
+        <input type="text" id="base" name="base" required>
+
+        <label for="height">Enter the height:</label>
+        <input type="text" id="height" name="height" required>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if base is not none and height is not none and area is not none %}
+        <p>The area of a triangle with base {{ base }} and height {{ height }} is: {{ area }}</p>
+    {% elif error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>
